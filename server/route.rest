@@ -1,0 +1,21 @@
+POST http://localhost:8080/hi
+Content-Type: application/json
+
+{
+	
+    "firstName": "isra",
+	"lastName": "elwa",
+	"email": "elwazirsra2002@gmail.com",
+	"password": "lovelove",
+	"medicalCondition": " none",
+	"allergies": "none",
+	"extraInfo": "no extra",
+	"username": "isy"
+
+
+}
+
+
+
+###
+GET http://localhost:8080/api

@@ -1,0 +1,108 @@
+require('dotenv').config()
+const express = require('express');
+const app = express()
+const router = express.Router();
+const {User, validate} = require('../models/user')
+const bcrypt = require('bcrypt')
+const crypto = require("crypto")
+const sendEmail = require("../utils/emailVerification")
+const Token = require('../models/token');
+const jwt = require('jsonwebtoken');
+const { error } = require('console');
+
+
+
+
+//creating token using jwt
+const createToken= (_id)=>{
+    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'}  )
+}
+
+
+router.route("/signup")
+.post(async(req,res)=>{
+    const {email, firstName, lastName, allergies, medicalCondition, extraInfo, password, username, userType, relationship} =req.body
+  
+    try{
+      
+     const {error} = validate(req.body);
+   
+     if(error){
+        console.log(error," herererer")
+        return res.status(400).json({message :  error.details[0].message})
+      
+        
+     }
+     const account = await User.findOne({email: email});
+      
+     if(!account){
+      
+       // adding salt to the password
+       const salt = await bcrypt.genSalt(Number(process.env.SALT));
+       const hashPasssword = await bcrypt.hash(password, salt);
+
+       //saving the new user account with the values
+       let user = await new User({firstName:firstName, lastName:lastName, medicalCondition:medicalCondition, allergies:allergies, extraInfo:extraInfo, email:email, userType:userType, password:hashPasssword, username:username, relationship:relationship}).save();
+       //creating a token for that user 
+        let tokens = createToken(user._id)
+      
+       let tokenSaved = await new Token({
+         userId: user._id,
+         token: tokens
+       }).save() 
+      
+
+       const url = `http://localhost:8080/api/account/${user.id}/verify/${tokenSaved.token}`;
+       await sendEmail(user.email, "verify new Cheer", "Click on the link to verify "+ user.firstName + " "+ user.lastName+ " " + url)
+       res.status(201).json({message: "An email has been sent to the admin, please wait to be verified before logging in."})
+   
+     }
+     else{
+       return res.json({message:"This account is already registered. Login"})
+     }
+    
+
+   } 
+    catch(err){
+        console.log(err)
+       res.status(400).json({message: "User not created"})
+    }
+ })
+
+  //verification for email
+  router.route('/account/:id/verify/:token')
+  .get(async(req,res)=>{
+    try{
+        const user = await User.findOne({_id: req.params.id});
+        if(!user){
+            return res.status(400).json({message: "Invalid link"})
+        }
+
+      const token = await Token.findOne({
+        userId: user._id,
+        token: req.params.token
+      })
+    
+     
+      if(!token){
+        return res.status(400).json({message: "invalid link"});
+      }
+
+      await User.updateOne({_id:token.userId}, {$set:{verified:true}});
+      console.log(token._id, " the token")
+      await Token.findOneAndDelete(token._id);
+
+      res.status(201).json({message: "emailed verified successfully"})
+
+    }
+    catch(err){
+        console.log(err)
+         res.status(500).json({message: err})
+    }
+  })
+
+
+
+
+
+module.exports = router;
