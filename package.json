@@ -4,7 +4,10 @@
   "description": "se3350-project-group7 created by GitHub Classroom",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node server",
+  "server": "node server/routes/index.js",
+  "frontend": "cd cheer && npm start",
+  "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^4.18.2",
