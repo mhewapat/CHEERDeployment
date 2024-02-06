@@ -4,7 +4,7 @@
   "description": "se3350-project-group7 created by GitHub Classroom",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "PORT=8080 react-scripts start"
   },
   "repository": {
     "type": "git",
