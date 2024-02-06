@@ -4,7 +4,7 @@
   "description": "se3350-project-group7 created by GitHub Classroom",
   "main": "index.js",
   "scripts": {
-    "start": "node server/routes/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
