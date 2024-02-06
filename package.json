@@ -4,7 +4,7 @@
   "description": "se3350-project-group7 created by GitHub Classroom",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=8080 react-scripts start"
+    "start": "node server/routes/index.js"
   },
   "repository": {
     "type": "git",
