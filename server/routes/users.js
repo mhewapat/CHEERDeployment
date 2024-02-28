@@ -28,7 +28,6 @@ router.route("/signup")
      const {error} = validate(req.body);
    
      if(error){
-        console.log(error," herererer")
         return res.status(400).json({message :  error.details[0].message})
       
         
@@ -102,7 +101,41 @@ router.route("/signup")
   })
 
 
+  // get client's info
+  router.get("/clientInfo", async (req, res) => {
+    try {
+      const user = await User.findOne({ firstName: req.query.firstName, lastName: req.query.lastName });
+      if (!user){
+        return res.status(401).json({ data: '', message: "Unknown user" });
+      }
+  
+      else{
+      res.status(200).json({ medicalCondition: user.medicalCondition, allergies: user.allergies, extraInfo: user.extraInfo, message: "user found" });
+      }
+      
+    } catch (error) {
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
 
+  // get list of clients
+  router.get("/clientList", async (req, res) => {
+    try {
+      
+      const users = await User.find({ userType: 'Client' });
+      if (!users){
+        return res.status(401).json({ data: '', message: "Unknown users" });
+      }
+  
+      else{
+        let list = users.map((e)=>{return {"name": e.firstName + " " + e.lastName}});
+        res.status(200).json({ fullName: list, message: "users found" });
+      }
+      
+    } catch (error) {
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
 
 
 module.exports = router;

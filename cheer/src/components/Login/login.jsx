@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate} from 'react-router-dom';
 import {useState, useRef } from 'react';
 import { Password } from '../Password/Password';
 import background from './cheergroup.png';
-
-
+import { useAuth } from './auth.jsx';
 
 function Login (){
     const [email, setEmail] = useState(''); //update username
@@ -19,6 +17,8 @@ function Login (){
     const [clientPassword, setClientPassword] = useState([]); // updates the client password
     const routerPath = `/api`;//beginning of routerPath for login
     const backendUrl = 'http://localhost:8080';//using cors to connect the backend to the front end
+    const navigate = useNavigate();
+    const { login } = useAuth(); // used to store email from login
 
    
     const authenticate = () => {//calling authenticate to validate user
@@ -49,12 +49,17 @@ function Login (){
                         localStorage.setItem("token",data[dataV]);//place the token value inside local storage
                     }
                     if(dataV === "message"){//displaying the message returned by the backend to notify the user
+                         if(data[dataV] === "logged in successfully"){
+                            login(enteredEmail); 
+                            navigate('/main');
+                         }
                         setMsg(data[dataV]);//setting that msg to be displayed
                     }
                 }
+                // change route to main page
             })
             .catch((error) => {
-                console.log(error + " error from login data retrievel");//error msg if there is an error when retrieving the data
+                console.log(error + " error from login data retrieval");//error msg if there is an error when retrieving the data
                 })
             )
             .catch((err)=>{//error msg if there is an error reading the json from the backend

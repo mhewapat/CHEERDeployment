@@ -1,0 +1,99 @@
+/* General page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #DDBEA9; /* Background color */
+    color: #6B4F4F; /* Text color */
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h2, h3 {
+    color: #6B4F4F; /* Headings color */
+  }
+  
+  /* Style the upload form */
+  form {
+    background-color: #FFFFFF; /* Changed to white for more visibility */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Add a border to distinguish the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  }
+  
+  /* Style input fields and buttons to ensure they are visible */
+input[type="file"],
+input[type="text"],
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #6B4F4F; /* Use the darker brown for the border */
+  background-color: #F2D7D5; /* Use a light peach background for input and button */
+  color: #6B4F4F; /* Use the dark brown for text to ensure contrast */
+  font-size: 16px; /* Increase font size for readability */
+  cursor: pointer;
+}
+
+/* Style for button specifically */
+button {
+  background-color: #6B4F4F; /* Dark brown background for buttons */
+  color: #FFFFFF; /* White text for contrast */
+  font-weight: bold; /* Make the text bold for better visibility */
+}
+
+/* Ensure the button is visible on all backgrounds */
+button:hover {
+  background-color: #5A3E3E; /* A slightly lighter brown for the hover state */
+  border-color: #5A3E3E; /* Match border color to the hover background */
+}
+
+/* Additional styles for better visibility */
+.upload-section {
+  background-color: #fff; /* A white background for the upload section */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Add some space below the upload section */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow to lift the section off the page */
+}
+
+/* Style for the upload status message */
+.upload-status {
+  background-color: #F2D7D5; /* Light peach color for consistency */
+  color: #6B4F4F; /* Dark brown text for readability */
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 4px solid #6B4F4F; /* A darker border on the left for emphasis */
+  margin-top: 10px; /* Space it out from the form */
+}
+
+  
+  /* Upload status message */
+  p {
+    background-color: #F2D7D5; /* Background color for messages */
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 4px solid #6B4F4F; /* Add a left border for emphasis */
+  }
+  
+  /* PDF document display styles */
+  .react-pdf__Document {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff; /* Set a white background for the document */
+  }
+  
+  .react-pdf__Page {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .react-pdf__Page canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  }
+  

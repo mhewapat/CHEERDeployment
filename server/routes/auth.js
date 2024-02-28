@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
 //login route
+
 router.post("/login", async (req, res) => {
 	try {
 		// const { error } = validate(req.body);
@@ -36,6 +37,23 @@ router.post("/login", async (req, res) => {
 		return res.status(401).json({ message: "Invalid Email or Password" });
 	}
 	
+		
+	} catch (error) {
+		res.status(500).json({ message: "Internal Server Error" });
+	}
+});
+
+// used to get userType
+router.get("/login", async (req, res) => {
+	try {
+		const user = await User.findOne({ email: req.query.email });
+		if (!user){
+			return res.status(401).json({ data: '', message: "Unknown user" });
+		}
+
+		else{
+		res.status(200).json({ data: user.userType, username: user.username, message: "user found" });
+		}
 		
 	} catch (error) {
 		res.status(500).json({ message: "Internal Server Error" });

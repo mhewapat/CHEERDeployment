@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "fair-column-405802",
+  "private_key_id": "20ae93302936d3d033791e890be2daf422ab50ac",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCfjqDrEOli6Qkn\nyXyO0r4Ao+Wif0YjCuIHjtj3nffZUQu59cD1dAYnKptOaPyTrPL8ZA8jZHWW1u2U\nd0UE3vcoXc2gZqh9aLtFxZqo8OMByg+F0dXxmMVIP+q8yHC67iEgTIPbkI2iKKbc\ng9QOjOixEDy/S11bk+I3rx1zP8WdSYzfSeEP6OKHEMHNsJt3TYL95cpbtnBVsKl/\nafSdTM2WFrsov9QfsFJ5daUfz+djAdMt0GIGBG9xh0D6GvGP4PS9SuPt+sWvi0R/\npJArBeL/QCzdyxxrbq1z93srOdoJnFy0z/ThpNRZ1y7iEEExCcyC0VM97Z9ukB/I\nHoV8Ufu3AgMBAAECggEARKohNzf+cCoAXiZ4G5C24tilrLIgEVmQHxeK6LkLHfMi\nXENV6GuncDiGQI6uz7CYmyRGXYFQl3rkIEXZpnh7ndwMb1BuhxXIrgSVg8myr6Tw\n3DKK4x9PG0Iid169ILz09YzoG9fQE+5xrKlw21gplXV65wn8Ybo5GqSaRGw303FS\nj1UsexlHohEb6MZdldrIFe4N4soB5iLH2PloVuBWM6NFJRkPIlKqO4J1Adx42Tx2\np8P6eKcE/DUzieriTU8a2WLnDXIMusojBZ48bYq307TQTX6/jRPKoN0K7/uXx4lX\nf+ede6JxHg2JSeNCetH/N3aoOI01tiRXOIvHe8QjtQKBgQDbMqLWYDdIUAfcSDpA\ns9qe4M3wXTUVV4OeRahCVR3tILjjZ+XiylYTWS9Y1jugd0aHqjxjcawL1zoaEtd/\nvMokgNLIGYAgJ5RJicpLv+hty/G3xJu8Z3O1ojjQoXYClhiNartjaRL5mdGg531X\nsJENH6XIxTfoh8a6Ko+aQU2nUwKBgQC6WJI4lxanPeBkI/OMfTxZPWkAJnjH1kpc\nws+O+rgnqY8WPWS56TeDbGxl6Jjue5ocYVIaaZ2r9QOb2VJyXOZZuVHJYafQ7weN\nSDIfPdMZ5GQHT4TTD+inT3ntv2sQDt1d03eSJRqZnUh2N1kFW6ttljqNakKSXk5f\n5L0+FFSBjQKBgCvntZQpC4mxdhGaagihvc2LC9T0ZniS4esm2rAGqorfvgjWu8Y0\nbw9LEt/BcYoPuhHceGIW17Y7cwjb80xDvV2YbB/mc7J9Gwer0NhhZSXw7sa3W9Ze\nBmBAUQ8A+ElGVT6mPUiJOGLEe6e2FnYlCLjPOP7A+hTadWS+t6rXH72/AoGAO5vB\nimCqWm0srlvhuHsHJvTB9c5YrHQb7XhTtMT2y5ktsEuLQP0dSOkR87dn1EGtlo57\nGP/X8/24Xc4y1WpqNSFWzDh02hzcKZGClwPL12h7pusE7g8UuRBvTGIC+WwH28+d\nXB6KV8E8QLSLwW8Fc1Su/jWTfga0w3AEKSuPrLECgYAKHwuabRhlHSckDS5eQgE5\nBroZ7ob68IkLCStZTLYnfH8dBR2o+twstsBR1vI3KXvH1fKwWQjxgnvnTuyp7n/t\ntliDno2o1mQr+YQ5FNLvQSaJjwhycS0UAmZe0MWRXfdZAwBBjAIWZBGtA+tGENpy\nmkOwx9gBf+1LNQfttGgLzQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "cheer-newsletter@fair-column-405802.iam.gserviceaccount.com",
+  "client_id": "116052163956817361852",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cheer-newsletter%40fair-column-405802.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
